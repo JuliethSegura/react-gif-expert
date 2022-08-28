@@ -3,27 +3,25 @@ import { useFetchGifs } from '../hooks/useFetchGifs';
 
 export const GifGrid = ({ category }) => {
 
-    const { images, isLoading } = useFetchGifs( category );
-    
+    const { images, isLoading } = useFetchGifs(category);
+
     return (
         <>
-            {/* <h3>{ category }</h3> */}
-            <h4>Aqui tienes los resultados</h4>
+            <h4>Gif / Tecnología <br />
+                10 resultados | Imágenes de archico con derechos de autor</h4>
             {
-                isLoading && ( <h2>Cargando...</h2> )
+                isLoading && (<h2>Cargando...</h2>)
             }
-            
 
             <div className="card-grid">
                 {
-                    images.map( ( image ) => (
-                        <GifItem 
-                            key={ image.id } 
-                            { ...image }
+                    images.map((image) => (
+                        <GifItem
+                            key={image.id}
+                            {...image}
                         />
                     ))
                 }
-                
             </div>
 
         </>

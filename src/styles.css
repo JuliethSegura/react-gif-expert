@@ -1,31 +1,18 @@
 * {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(234, 234, 234);
+  color: #212529;
 }
 
 body {
-  padding: 60px;
+  padding: 30px;
 }
 
-input {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(97, 32, 158);
-  color: black;
-  font-size: 1.2rem;
-  outline: none;
-  padding: 10px 15px;
-  width: 100%;
+
+h4{
+  font-size: 1rem;
 }
 
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 3rem;
-  margin-bottom: 5px;
-}
+/* CARDS - TARJETAS */
 
 .card-grid {
   display: flex;
@@ -35,108 +22,312 @@ h3 {
 }
 
 .card {
+  cursor: pointer;
   align-content: center;
   align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.03);
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  transition: all .2s;
+  box-shadow: 10px 10px 2px 1px #428af6;
   display: flex;
   flex-direction: column;
   height: 0%;  
   justify-content: center;
   margin-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 50px;
   overflow: hidden;
-}
+ }
 
-.card p {
-  background-color: white;
+ .card p {
   flex: 1;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 5px;
   padding: 5px 20px 0px 20px;
+  background: white;
   text-align: center;
+  font-weight: 50px;
+  font-size: 20px;
 }
 
-.card img {
+.card:hover {
+  box-shadow: -12px 12px 2px -1px #28c079;
+ }
+
+
+/* INPUT */
+.group {
+  display: block;
+  line-height: 28px;
+  padding: 1rem 1rem;
+  align-items: center;
   width: 100%;
+ }
+ 
+ .input {
+  width: 80%;
+  height: 50px;
+  line-height: 28px;
+  padding-left: 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #000000;
+  transition: .3s ease;
+  letter-spacing: 1px;
+
+ }
+ 
+ .input::placeholder {
+  color:#9e9ea7;
+ }
+ 
+ .input:focus, input:hover {
+  outline: none;
+  border-color: #428af6;
+  background-color: #f1f1f2;
+  box-shadow: 0 0 0 1px #a1c2f5;
+ }
+ 
+ button {
+  display: inline-block;
+  align-items: flex-end;
+  padding: 1rem 1rem;
+  margin-left: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 100;
+  color: #000;
+  background-color: #f3f3f4;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
+button:hover {
+  background-color: #0d6efd;
+  box-shadow: 0px 10px 10px #428af6;
+  color: #fff;
+  transform: translateY(-7px);
+}
 
-/* ESTILOS DE TARJETAS  CLASE: 85*/
+button:active {
+  transform: translateY(-1px);
+}
+
+/* BOTON ME GUSTA */
+
+/* label {
+ background-color: white;
+ display: flex;
+ align-items: center;
+ gap: 14px;
+ padding: 10px 15px 10px 10px;
+ cursor: pointer;
+ user-select: none;
+ border-radius: 10px;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ color: black;
+}
+
+input {
+ display: none;
+}
+
+input:checked + label svg {
+ fill: hsl(0deg 100% 50%);
+ stroke: hsl(0deg 100% 50%);
+ animation: heartButton 1s;
+}
+
+@keyframes heartButton {
+ 0% {
+  transform: scale(1);
+ }
+
+ 25% {
+  transform: scale(1.3);
+ }
+
+ 50% {
+  transform: scale(1);
+ }
+
+ 75% {
+  transform: scale(1.3);
+ }
+
+ 100% {
+  transform: scale(1);
+ }
+}
+
+input + label .action {
+ position: relative;
+ overflow: hidden;
+ display: grid;
+}
+
+input + label .action span {
+ grid-column-start: 1;
+ grid-column-end: 1;
+ grid-row-start: 1;
+ grid-row-end: 1;
+ transition: all .5s;
+}
+
+input + label .action span.option-1 {
+ transform: translate(0px,0%);
+ opacity: 1;
+}
+
+input:checked + label .action span.option-1 {
+ transform: translate(0px,-100%);
+ opacity: 0;
+}
+
+input + label .action span.option-2 {
+ transform: translate(0px,100%);
+ opacity: 0;
+}
+
+input:checked + label .action span.option-2 {
+ transform: translate(0px,0%);
+ opacity: 1;
 
 
+****HTML BOTON ME GUSTA****
+<input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button">
+<label for="favorite" class="container">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+  <div class="action">
+    <span class="option-1">Add to Favorites</span>
+    <span class="option-2">Added to Favorites</span>
+  </div>
+</label>
 
-/* :root {
-  --height: 350px;
-  --widht: 450px;
-  --important-color: #e8175d;
-  --shadow-color: 232, 23, 93;
-  --shadow1: rgba(var(--shadow-color), 1.2) 0px 1px 1px 0px inset;
-  --shadow2: rgba(var(--shadow-color), 0.35) 0px 50px 100px -20px;
-  --shadow3: rgba(var(--shadow-color), 1.3) 0px 30px 60px -30px;
-}
- 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
- 
-.container-card {
-  height: 450px;
-  width: 350;
- 
-  align-content: center;
-  border-radius: 7px;
-  overflow: hidden;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  margin: 1em;
-  transition: 200ms box-shadow ease-in;
-}
- 
-.container-header {
-  display: flex;
-  justify-content: center;
-  height: 300px;
-  width: 400px;
-}
- 
-img.container-card__img {
-  object-fit: cover;
-  height: 300px;
-  width: 460px;
-}
- 
-.container-card__text {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 2em;
-}
- 
-.container-card__text::first-letter {
-  font-size: 1.5rem;
-  color: var(--important-color);
-  font-weight: bolder;
-}
- 
-.category-text {
-  text-align: center;
-  font-size: 2.5rem;
-}
- 
-.category-text::first-letter {
-  font-size: 3rem;
-  color: var(--important-color);
-}
- 
-.container-card:active {
-  box-shadow: var(--shadow1), var(--shadow2), var(--shadow3);
-}
- 
-@media (hover: hover) {
-  .container-card:hover {
-    box-shadow: var(--shadow1), var(--shadow2), var(--shadow3);
-  }
 } */
+
+
+/* BOTON DE DESCARGA */
+/* .button {
+ --width: 100px;
+ --height: 25px;
+ --tooltip-height: 35px;
+ --tooltip-width: 90px;
+ --gap-between-tooltip-to-button: calc(var(--tooltip-height) + 3px);
+ --button-color: #1163ff;
+ --tooltip-color: #fff;
+ width: var(--width);
+ height: var(--height);
+ background: var(--button-color);
+ position: relative;
+ text-align: center;
+ border-radius: 0.45em;
+ font-family: "Arial";
+ transition: background 0.3s;
+}
+
+.button::before {
+ position: absolute;
+ content: attr(data-tooltip);
+ width: var(--tooltip-width);
+ height: var(--tooltip-height);
+ background-color: var(--tooltip-color);
+ font-size: 0.9rem;
+ color: #111;
+ border-radius: .25em;
+ line-height: var(--tooltip-height);
+ bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+ left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+ position: absolute;
+ content: '';
+ width: 0;
+ height: 0;
+ border: 10px solid transparent;
+ border-top-color: var(--tooltip-color);
+ left: calc(50% - 10px);
+ bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+ opacity: 0;
+ visibility: hidden;
+ transition: all 0.5s;
+}
+
+.text {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+ overflow: hidden;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+ color: #fff;
+}
+
+.text {
+ top: 0
+}
+
+.text,.icon {
+ transition: top 0.5s;
+}
+
+.icon {
+ color: #fff;
+ top: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.button:hover {
+ background: #6c18ff;
+}
+
+.button:hover .text {
+ top: -100%;
+}
+
+.button:hover .icon {
+ top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+ opacity: 1;
+ visibility: visible;
+}
+
+.button:hover:after {
+ bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+ bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+} 
+
+****HTML BOTON DESCARGA****
+<div class="button" data-tooltip="Size: 20Mb">
+<div class="button-wrapper">
+  <div class="text">Download</div>
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
+    </span>
+  </div>
+</div>
+
+*/

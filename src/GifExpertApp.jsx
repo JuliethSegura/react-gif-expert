@@ -12,13 +12,9 @@ export const GifExpertApp = () => {
 
   return (
     <>
-
-      <h1>RECURSOS EDUCATIVOS DIGITALES -- REDI</h1>
-
       <AddCategory
         onNewCategory={(value) => onAddCategory(value)}
       />
-
       {
         categories.map((category) => (
           <GifGrid
@@ -29,6 +25,7 @@ export const GifExpertApp = () => {
 
     </>
   )
+  
 }
 
 
