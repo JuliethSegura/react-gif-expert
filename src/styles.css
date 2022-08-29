@@ -3,10 +3,6 @@
   color: #212529;
 }
 
-body {
-  padding: 30px;
-}
-
 
 h4{
   font-size: 1rem;
@@ -15,6 +11,7 @@ h4{
 /* CARDS - TARJETAS */
 
 .card-grid {
+    margin-left: 16em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,37 +19,32 @@ h4{
 }
 
 .card {
-  cursor: pointer;
   align-content: center;
   align-items: center;
-  background: rgb(255, 255, 255);
-  border-radius: 5px;
-  border: 1px solid rgb(0, 0, 0);
-  transition: all .2s;
-  box-shadow: 10px 10px 2px 1px #428af6;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   height: 0%;  
   justify-content: center;
   margin-bottom: 20px;
-  margin-right: 50px;
+  margin-right: 20px;
   overflow: hidden;
- }
-
- .card p {
-  flex: 1;
-  font-size: 1.4rem;
-  margin: 5px;
-  padding: 5px 20px 0px 20px;
-  background: white;
-  text-align: center;
-  font-weight: 50px;
-  font-size: 20px;
 }
 
-.card:hover {
-  box-shadow: -12px 12px 2px -1px #28c079;
- }
+.card p {
+  background-color: white;
+  flex: 1;
+  font-size: 1.5rem;
+  margin-top: 5px;
+  padding: 5px 20px 0px 20px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
 
 
 /* INPUT */
@@ -90,244 +82,9 @@ h4{
   box-shadow: 0 0 0 1px #a1c2f5;
  }
  
- button {
-  display: inline-block;
-  align-items: flex-end;
-  padding: 1rem 1rem;
-  margin-left: 20px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 100;
-  color: #000;
-  background-color: #f3f3f4;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-}
-
-button:hover {
-  background-color: #0d6efd;
-  box-shadow: 0px 10px 10px #428af6;
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-button:active {
-  transform: translateY(-1px);
-}
-
-/* BOTON ME GUSTA */
-
-/* label {
- background-color: white;
- display: flex;
- align-items: center;
- gap: 14px;
- padding: 10px 15px 10px 10px;
- cursor: pointer;
- user-select: none;
- border-radius: 10px;
- box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
- color: black;
-}
-
-input {
- display: none;
-}
-
-input:checked + label svg {
- fill: hsl(0deg 100% 50%);
- stroke: hsl(0deg 100% 50%);
- animation: heartButton 1s;
-}
-
-@keyframes heartButton {
- 0% {
-  transform: scale(1);
- }
-
- 25% {
-  transform: scale(1.3);
- }
-
- 50% {
-  transform: scale(1);
- }
-
- 75% {
-  transform: scale(1.3);
- }
-
- 100% {
-  transform: scale(1);
- }
-}
-
-input + label .action {
- position: relative;
- overflow: hidden;
- display: grid;
-}
-
-input + label .action span {
- grid-column-start: 1;
- grid-column-end: 1;
- grid-row-start: 1;
- grid-row-end: 1;
- transition: all .5s;
-}
-
-input + label .action span.option-1 {
- transform: translate(0px,0%);
- opacity: 1;
-}
-
-input:checked + label .action span.option-1 {
- transform: translate(0px,-100%);
- opacity: 0;
-}
-
-input + label .action span.option-2 {
- transform: translate(0px,100%);
- opacity: 0;
-}
-
-input:checked + label .action span.option-2 {
- transform: translate(0px,0%);
- opacity: 1;
 
 
-****HTML BOTON ME GUSTA****
-<input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button">
-<label for="favorite" class="container">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-  <div class="action">
-    <span class="option-1">Add to Favorites</span>
-    <span class="option-2">Added to Favorites</span>
-  </div>
-</label>
-
-} */
 
 
-/* BOTON DE DESCARGA */
-/* .button {
- --width: 100px;
- --height: 25px;
- --tooltip-height: 35px;
- --tooltip-width: 90px;
- --gap-between-tooltip-to-button: calc(var(--tooltip-height) + 3px);
- --button-color: #1163ff;
- --tooltip-color: #fff;
- width: var(--width);
- height: var(--height);
- background: var(--button-color);
- position: relative;
- text-align: center;
- border-radius: 0.45em;
- font-family: "Arial";
- transition: background 0.3s;
-}
 
-.button::before {
- position: absolute;
- content: attr(data-tooltip);
- width: var(--tooltip-width);
- height: var(--tooltip-height);
- background-color: var(--tooltip-color);
- font-size: 0.9rem;
- color: #111;
- border-radius: .25em;
- line-height: var(--tooltip-height);
- bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
- left: calc(50% - var(--tooltip-width) / 2);
-}
 
-.button::after {
- position: absolute;
- content: '';
- width: 0;
- height: 0;
- border: 10px solid transparent;
- border-top-color: var(--tooltip-color);
- left: calc(50% - 10px);
- bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 10px);
-}
-
-.button::after,.button::before {
- opacity: 0;
- visibility: hidden;
- transition: all 0.5s;
-}
-
-.text {
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-.button-wrapper,.text,.icon {
- overflow: hidden;
- position: absolute;
- width: 100%;
- height: 100%;
- left: 0;
- color: #fff;
-}
-
-.text {
- top: 0
-}
-
-.text,.icon {
- transition: top 0.5s;
-}
-
-.icon {
- color: #fff;
- top: 100%;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-.button:hover {
- background: #6c18ff;
-}
-
-.button:hover .text {
- top: -100%;
-}
-
-.button:hover .icon {
- top: 0;
-}
-
-.button:hover:before,.button:hover:after {
- opacity: 1;
- visibility: visible;
-}
-
-.button:hover:after {
- bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
-}
-
-.button:hover:before {
- bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
-} 
-
-****HTML BOTON DESCARGA****
-<div class="button" data-tooltip="Size: 20Mb">
-<div class="button-wrapper">
-  <div class="text">Download</div>
-    <span class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
-    </span>
-  </div>
-</div>
-
-*/

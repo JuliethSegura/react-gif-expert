@@ -7,22 +7,27 @@ export const GifGrid = ({ category }) => {
 
     return (
         <>
-            <h4>Gif / Tecnología <br />
-                10 resultados | Imágenes de archico con derechos de autor</h4>
             {
                 isLoading && (<h2>Cargando...</h2>)
             }
+            <section id="speakers" className="mt-4">
+                <div className="container">
+                    <div className="card-grid">
+                        {
+                            images.map((image) => (
+                                <GifItem
+                                    key={image.id}
+                                    {...image}
+                                />
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
 
-            <div className="card-grid">
-                {
-                    images.map((image) => (
-                        <GifItem
-                            key={image.id}
-                            {...image}
-                        />
-                    ))
-                }
-            </div>
+
+
+
 
         </>
     )

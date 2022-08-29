@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { AddCategory, GifGrid } from './components';
+import HeaderDashboard  from './components/Dashboard/HeaderDashboard';
+import ContainerFluido from './components/Dashboard/ContainerFluido';
+import Main from './components/Dashboard/Main';
+
+
 
 export const GifExpertApp = () => {
 
@@ -12,7 +17,9 @@ export const GifExpertApp = () => {
 
   return (
     <>
-      <AddCategory
+      <HeaderDashboard/>
+      <ContainerFluido /> 
+       <AddCategory
         onNewCategory={(value) => onAddCategory(value)}
       />
       {
@@ -21,7 +28,7 @@ export const GifExpertApp = () => {
             key={category}
             category={category} />
         ))
-      }
+      } 
 
     </>
   )
