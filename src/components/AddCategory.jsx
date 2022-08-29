@@ -19,6 +19,7 @@ export const AddCategory = ({ onNewCategory }) => {
     }
 
     return (
+    
         <form className='col-md-9 ms-sm-auto col-lg-10 px-md-5  mt-3' onSubmit={onSubmit}>
 
             <div class="d-flex align-items-center">
